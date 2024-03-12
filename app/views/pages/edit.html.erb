@@ -1,0 +1,19 @@
+<div class="signup-container">
+  <h2>Edit User</h2>
+  <%= form_with model:@user,url:profile_path,method: :patch, local:true do |f| %>
+    <div class="form-floating mt-3">
+      <%= f.text_field :username,class:"form-control",placeholder:"Username" %>
+      <%= f.label :username %>
+    </div>
+    <div class="form-floating mt-3">
+      <%= f.email_field :email,class:"form-control",placeholder:"name@example.com" %>
+      <%= f.label :email %>
+    </div>
+    <div class="form-floating mt-3">
+      <%= f.password_field :password,class:"form-control",placeholder:"Password" %>
+      <%= f.label :password %>
+    </div>
+    <%= f.file_field :image,class:"form-control" %></br>
+    <%= f.submit "Update User",class:"signup-btn" %>
+  <% end %>
+</div>

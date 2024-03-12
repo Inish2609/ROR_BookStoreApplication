@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="item-container">
+        <div class="row">
+          <div class="col-md-6">
+            <%= image_tag(@book.image ,class:"item-image") if @book.image.attached? %>
+          </div>
+          <div class="col-md-6 item-description">
+            <h2><%= @book.title %></h2>
+            <p><%= truncate(@book.description,length:150) %></p>
+            <p class="item-price">$<%= @book.price %></p>
+            <%= link_to "Add To Cart",'/books/'+@book.id.to_s,method: :post,class:"btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  

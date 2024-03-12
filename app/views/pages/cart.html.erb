@@ -1,0 +1,36 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <% @items.each do |item| %>
+            <div class="col-md-6">
+                <div class="cart-item">
+                    <div class="row">
+                <div class="col-md-4">
+                    <%= image_tag(item.book.image, class: "cart-image mx-auto d-block") if item.book.image.attached? %>
+                </div>
+                <div class="col-md-8-ml-5">
+                    <div class="cart-details">
+                        <h3><%= item.book.title %></h3>
+                        <p>Price: $<%= item.book.price %></p>
+                        <%= link_to "Remove",item_path(item.id),method: :delete,class:"btn btn-danger" %>
+                    </div>
+                    <div><% @total = @total+item.book.price %></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="buy-section">
+        <h2 class="text-center">Buy Section</h2>
+        <p class="text-center">Total Price: <%= number_to_currency(@total) %></p>
+        <button class="btn btn-primary buy-button">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</div>

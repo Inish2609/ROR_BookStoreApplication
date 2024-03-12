@@ -1,0 +1,36 @@
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+  <h1 class="display-4">Welcome to Our Book Shop</h1>
+  <p class="lead">Discover amazing features and services.</p>
+  <%= link_to "Learn More",about_path,class:"btn btn-lg btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+    <%= link_to filter_path("fiction") do %>
+      <div class="feature-box">
+        <h3>Fiction Books</h3>
+        <p>A work of fiction is created in the imagination of its author. The author invents the story and makes up the characters, the plot or storyline, the dialogue and sometimes even the setting. A fictional work does not claim to tell a true story.</p>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+    <%= link_to filter_path("non-fiction") do %>
+      <div class="feature-box">
+        <h3>Non-Fiction Books</h3>
+        <p>Non-fiction (or nonfiction) is any document or media content that attempts, in good faith, to convey information only about the real world, rather than being grounded in imagination. Non-fiction typically aims to present topics objectively based on historical, scientific, and empirical information.</p>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-lg-4">
+    <%= link_to filter_path("story") do %>
+      <div class="feature-box">
+        <h3>Story Books</h3>
+        <p>A storybook is a book of stories for children. As a child she learned to draw by tracing pictures out of her mother's old storybooks.</p>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

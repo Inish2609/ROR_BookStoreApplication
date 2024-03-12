@@ -1,0 +1,14 @@
+<div class="login-container">
+  <h2>Login</h2>
+  <%= form_with scope: :user,url:login_path,local:true do |f| %>
+    <div class="form-floating mt-3">
+      <%= f.email_field :email,class:"form-control",placeholder:"name@example.com" %>
+      <%= f.label :email %>
+    </div>
+    <div class="form-floating mt-3">
+      <%= f.password_field :password,class:"form-control",placeholder:"Password" %>
+      <%= f.label :password %>
+    </div>
+    <%= f.submit "Login",class:"login-btn" %>
+  <% end %>
+</div>

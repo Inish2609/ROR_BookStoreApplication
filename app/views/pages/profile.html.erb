@@ -1,0 +1,19 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="profile-card">
+        <div class="profile-image mx-auto">
+        <%= image_tag(@user.image, style: "height: 170px;width : 140px") %>
+        </div>
+        <div class="profile-details text-center">
+          <h2><%= @user.username %></h2>
+          <p>Email: <%= @user.email %></p>
+          <p>Location: Avaraikulam</p>
+          <p>Bio: Learning Ruby On Rails</p>
+          <%= link_to "Edit Profile",profileEdit_path(@user.id),class:"btn btn-primary" %>
+          <%= link_to "Delete Profile",profile_path(@user.id),method: :delete,class:"btn btn-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

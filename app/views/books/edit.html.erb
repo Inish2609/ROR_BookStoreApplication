@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="upload-container">
+        <div class="upload-content">
+          <h2 class="text-center mb-4">Upload Book Details</h2>
+          <%= form_with model:@book,method: :put,local:true do |f| %>
+            <div class="form-group mt-3">
+              <%= f.label :title %>
+              <%= f.text_field :title,class:"form-control",placeholder:"Enter book title" %>
+            </div>
+            <div class="form-group mt-3">
+              <%= f.label :author_name %>
+              <%= f.text_field :author_name,class:"form-control",placeholder:"Enter author name" %>
+            </div>
+            <div class="form-group mt-3">
+              <%= f.label :description %>
+              <%= f.text_area :description,class:"form-control",rows:3,placeholder:"Enter book description" %>
+            </div>
+             <div class="form-group mt-3">
+              <%= f.label :category %>
+              <%= f.text_field :category,class:"form-control",placeholder:"Enter book category" %>
+            </div>
+             <div class="form-group mt-3">
+              <%= f.label :price %>
+              <%= f.text_field :price,class:"form-control",placeholder:"Enter book price" %>
+            </div>
+             <div class="form-group mt-3">
+              <%= f.label :quantity %>
+              <%= f.text_field :quantity,class:"form-control",placeholder:"Enter book quantity" %>
+            </div>
+            <div class="form-group mt-3">
+              <%= f.label :image %>
+              <%= f.file_field :image,class:"form-control" %>
+            </div><br>
+            <%= f.submit "Upload",class:"btn btn-primary btn-block" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
